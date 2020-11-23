@@ -1,6 +1,6 @@
 version: "3"
 services:
-  redis-server: 
+  redis-server:
     image: "redis:latest"
     restart: "on-failure"
   flaskapp:
@@ -10,6 +10,6 @@ services:
     image: "flaskapp:latest"
     ports:
       - "3001:80"
-    depends-on:
-      - "redis-server"
+    depends_on:
+       - "redis-server"
     restart: "on-failure"
